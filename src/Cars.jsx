@@ -8,18 +8,18 @@ import carYellow from './images/carYellow.jpeg';
 
 class Cars extends Component {
   render() {
-    const { redCar, blueCar, yellowCar } = this.context.cars;
+    const { cars: { red, blue, yellow} } = this.context.cars_signal;
     const { moveCar } = this.context;
     return (
       <div>
         <div>
           <img
-            className={redCar ? 'car-right' : 'car-left'}
+            className={red ? 'car-right' : 'car-left'}
             src={carRed}
             alt="red car"
           />
           <button
-            onClick={() => moveCar('redCar', !redCar)}
+            onClick={() => moveCar('red', !red)}
             type="button"
           >
             Move
@@ -27,12 +27,12 @@ class Cars extends Component {
         </div>
         <div>
           <img
-            className={blueCar ? 'car-right' : 'car-left'}
+            className={blue ? 'car-right' : 'car-left'}
             src={carBlue}
             alt="blue car"
           />
           <button
-            onClick={() => moveCar('blueCar', !blueCar)}
+            onClick={() => moveCar('blue', !blue)}
             type="button"
           >
             Move
@@ -40,12 +40,12 @@ class Cars extends Component {
         </div>
         <div>
           <img
-            className={yellowCar ? 'car-right' : 'car-left'}
+            className={yellow ? 'car-right' : 'car-left'}
             src={carYellow}
             alt="yellow car"
           />
           <button
-            onClick={() => moveCar('yellowCar', !yellowCar)}
+            onClick={() => moveCar('yellow', !yellow)}
             type="button"
           >
             Move
